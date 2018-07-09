@@ -12,14 +12,19 @@ Esta guía esta basada en [este](https://github.com/bitfwdcommunity/Issue-your-o
 
 ## Desplegando nuestro token ERC20 en la testnet de Ethereum:
 
-###_¿Qué necesitamos?_
+*_¿Qué necesitamos?_*
+
 -1. Una wallet de Ethereum (en la testnet de Ropsten por ejemplo).
+
 -2. Algunos Ethers (como antes, de la testnet).
+
 -3. Un editor de textos(Atom, Sublime...).
+
 -4. Un contrato de Solidity.
 
+
 -1:
-    Para el tutorial usaremos la testnet de Ethereum llamada [Ropsten](https://ropsten.etherscan.io/); para ello, primero instalaremos el complemento del navegador [Metamask](https://metamask.io/), una vez instalado y con una contraseña segura, arriba en la izquierda cambiamos de "_Main Network_" a "_Ropsten Test Net_"
+    Para el tutorial usaremos la testnet de Ethereum llamada [Ropsten](https://ropsten.etherscan.io/); para ello, primero instalaremos el complemento del navegador [Metamask](https://metamask.io/), una vez instalado y con una contraseña segura, arriba en la izquierda cambiamos de "_Main Network_" a "_Ropsten Test Network_"
         ![Ropsten](images/Ropsten.png)
 -2: 
     Entramos en [esta faucet](http://faucet.ropsten.be:3001/) o en [esta otra](https://faucet.metamask.io/) para pedir Ethers de la testnet de Ropsten.
