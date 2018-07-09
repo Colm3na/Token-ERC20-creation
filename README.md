@@ -62,7 +62,7 @@ Esta guía esta basada en [este](https://github.com/bitfwdcommunity/Issue-your-o
 - Si todo ha ido bien, Metamask debe tener un número 1 requiriendo nuestra atención, lo abrimos, y hacemos clic en _"submit"_
     ![accept](images/accept.png)
 
-- Si buscamos nuestra wallet en un explorador de bloques, como por ejemplo [Etherscan.io](https://ropsten.etherscan.io/) e introducimos nuestra wallet, podemos ver la creación del contrato, y los tokens creados.
+- Si buscamos nuestra wallet en un explorador de bloques, como por ejemplo [Etherscan.io](https://ropsten.etherscan.io/), e introducimos nuestra wallet, podemos ver la creación del contrato, y los tokens creados.
     ![token](images/token.png)
 
 
