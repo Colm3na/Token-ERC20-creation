@@ -47,15 +47,21 @@ Esta guía esta basada en [este](https://github.com/bitfwdcommunity/Issue-your-o
     ![compile](images/compile.png)
 - Justo en la zona de _"BYTECODE"_, copiamos el valor de _"object"_.
 - Nos dirigimos a [My Ether Wallet](https://www.myetherwallet.com/) con Metamask desbloqueado y nuestra wallet con fondos de la testnet, nos aseguramos que estamos en la red de pruebas Ropsten, o la que hayamos seleccionado, seleccionamos _"contracts"_  y _"Deploy contract"_.
+
 - Una vez ahí, pegamos el codigo anterior y ponemos justo delante del mismo un `0x`, seleccionamos que se conecte a nuestra wallet usando _Metamask_ y hacemos clic en _"Connect to Metamask"_.
     ![metamask](images/metamask.png)
+
 - Como hemos podido comprobar la parte de _"Gas Limit"_ se ha rellenado con lo que el contrato necesita automáticamente.
+
 - Hacemos clic en _"Sign Transaction"_
     ![transaction](images/signTransaction.png)
+
 - Repetimos haciendo clic en _"Deploy Contract"_.
     ![deploy](images/deployTransaction.png)
+
 - Si todo ha ido bien, Metamask debe tener un número 1 requiriendo nuestra atención, lo abrimos, y hacemos clic en _"submit"_
     ![accept](images/accept.png)
+
 - Si buscamos nuestra wallet en un explorador de bloques, como por ejemplo [Etherscan.io](https://ropsten.etherscan.io/) e introducimos nuestra wallet, podemos ver la creación del contrato, y los tokens creados.
     ![token](images/token.png)
 
