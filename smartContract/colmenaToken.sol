@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 // ----------------------------------------------------------------------------
 // 'colmenaToken' token contract
 //
-// Deployed to : 0x5A86f0cafD4ef3ba4f0344C138afcC84bd1ED222
+// Deployed to : 0x10e9086f534F4B15b97EaB1fCc82e390A266643c
 // Symbol      : CoT0
 // Name        : Colmena Token
 // Total supply: 100000000
@@ -16,7 +16,7 @@ pragma solidity ^0.4.18;
 
 
 // ----------------------------------------------------------------------------
-// Safe maths
+// Matemáticas:
 // ----------------------------------------------------------------------------
 contract SafeMath {
     function safeAdd(uint a, uint b) public pure returns (uint c) {
@@ -56,9 +56,9 @@ contract ERC20Interface {
 
 
 // ----------------------------------------------------------------------------
-// Contract function to receive approval and execute function in one call
+// Función de contrato para recibir la aprobación y ejecutar la función en una llamada
 //
-// Borrowed from MiniMeToken
+// Usado de MiniMeToken
 // ----------------------------------------------------------------------------
 contract ApproveAndCallFallBack {
     function receiveApproval(address from, uint256 tokens, address token, bytes data) public;
@@ -66,7 +66,7 @@ contract ApproveAndCallFallBack {
 
 
 // ----------------------------------------------------------------------------
-// Owned contract
+// Dueño del contrato
 // ----------------------------------------------------------------------------
 contract Owned {
     address public owner;
@@ -97,10 +97,10 @@ contract Owned {
 
 
 // ----------------------------------------------------------------------------
-// ERC20 Token, with the addition of symbol, name and decimals and assisted
-// token transfers
+// ERC20 Token, con el símbolo, nombre, decimales y asistencia con la trasnferencia 
+// de tokens:
 // ----------------------------------------------------------------------------
-contract FucksToken is ERC20Interface, Owned, SafeMath {
+contract colmenaToken is ERC20Interface, Owned, SafeMath {
     string public symbol;
     string public  name;
     uint8 public decimals;
@@ -111,20 +111,20 @@ contract FucksToken is ERC20Interface, Owned, SafeMath {
 
 
     // ------------------------------------------------------------------------
-    // Constructor
+    // Constructor:
     // ------------------------------------------------------------------------
-    function FucksToken() public {
-        symbol = "0FUCKS";
-        name = "0 Fucks Token";
+    function colmenaToken() public {
+        symbol = "CoT0";
+        name = "Colmena Token";
         decimals = 18;
-        _totalSupply = 100000000000000000000000000;
-        balances[0x5A86f0cafD4ef3ba4f0344C138afcC84bd1ED222] = _totalSupply;
-        Transfer(address(0), 0x5A86f0cafD4ef3ba4f0344C138afcC84bd1ED222, _totalSupply);
+        _totalSupply = 100000000000000000000;
+        balances[0x10e9086f534F4B15b97EaB1fCc82e390A266643c] = _totalSupply;
+        Transfer(address(0), 0x10e9086f534F4B15b97EaB1fCc82e390A266643c, _totalSupply);
     }
 
 
     // ------------------------------------------------------------------------
-    // Total supply
+    // Suministro total:
     // ------------------------------------------------------------------------
     function totalSupply() public view returns (uint) {
         return _totalSupply  - balances[address(0)];
@@ -132,7 +132,7 @@ contract FucksToken is ERC20Interface, Owned, SafeMath {
 
 
     // ------------------------------------------------------------------------
-    // Get the token balance for account tokenOwner
+    // Obteniendo el balance total de tokens para la cuenta tokenOwner
     // ------------------------------------------------------------------------
     function balanceOf(address tokenOwner) public view returns (uint balance) {
         return balances[tokenOwner];
@@ -140,9 +140,10 @@ contract FucksToken is ERC20Interface, Owned, SafeMath {
 
 
     // ------------------------------------------------------------------------
-    // Transfer the balance from token owner's account to to account
-    // - Owner's account must have sufficient balance to transfer
-    // - 0 value transfers are allowed
+    // Transferir el saldo de la cuenta del propietario del token
+    // a la cuenta.
+    // - La cuenta del propietario debe tener saldo suficiente para la transferencia.
+    // - Se permiten las transferencias de valor 0.
     // ------------------------------------------------------------------------
     function transfer(address to, uint tokens) public returns (bool success) {
         balances[msg.sender] = safeSub(balances[msg.sender], tokens);
@@ -153,12 +154,12 @@ contract FucksToken is ERC20Interface, Owned, SafeMath {
 
 
     // ------------------------------------------------------------------------
-    // Token owner can approve for spender to transferFrom(...) tokens
-    // from the token owner's account
+    // El propietario del token puede aprobar el gasto para transferFrom(...) tokens
+    // de la cuenta del propietario del token
     //
     // https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md
-    // recommends that there are no checks for the approval double-spend attack
-    // as this should be implemented in user interfaces 
+    // Recomienda que no se verifique el ataque de doble gasto, ya que esto debería 
+    // implementarse en las interfaces de usuario  
     // ------------------------------------------------------------------------
     function approve(address spender, uint tokens) public returns (bool success) {
         allowed[msg.sender][spender] = tokens;
@@ -168,13 +169,13 @@ contract FucksToken is ERC20Interface, Owned, SafeMath {
 
 
     // ------------------------------------------------------------------------
-    // Transfer tokens from the from account to the to account
+    // Transferir tokens de la cuenta de origen a la cuenta
     // 
-    // The calling account must already have sufficient tokens approve(...)-d
-    // for spending from the from account and
-    // - From account must have sufficient balance to transfer
-    // - Spender must have sufficient allowance to transfer
-    // - 0 value transfers are allowed
+    // La cuenta que llama debe tener suficientes tokens approve(...)-d
+    // para los gastos de de la cuenta de origen y
+    // - Cuenta de origen debe tener saldo suficiente para transferir
+    // - El que envía debe tener suficiente margen para transferir
+    // - se permiten las transferencias de valor 0
     // ------------------------------------------------------------------------
     function transferFrom(address from, address to, uint tokens) public returns (bool success) {
         balances[from] = safeSub(balances[from], tokens);
@@ -186,8 +187,8 @@ contract FucksToken is ERC20Interface, Owned, SafeMath {
 
 
     // ------------------------------------------------------------------------
-    // Returns the amount of tokens approved by the owner that can be
-    // transferred to the spender's account
+    // Devuelve la cantidad de tokens aprobadas por el propietario que pueden 
+    // transferirse a la cuenta del que envía
     // ------------------------------------------------------------------------
     function allowance(address tokenOwner, address spender) public view returns (uint remaining) {
         return allowed[tokenOwner][spender];
@@ -195,9 +196,9 @@ contract FucksToken is ERC20Interface, Owned, SafeMath {
 
 
     // ------------------------------------------------------------------------
-    // Token owner can approve for spender to transferFrom(...) tokens
-    // from the token owner's account. The spender contract function
-    // receiveApproval(...) is then executed
+    // El propietario del token puede aprobar que el remitente transfiera tokens
+    //  From(...) desde la cuenta del propietario del token
+    // A continuación, se ejecuta la función de contrato emisor receiveApproval(...).
     // ------------------------------------------------------------------------
     function approveAndCall(address spender, uint tokens, bytes data) public returns (bool success) {
         allowed[msg.sender][spender] = tokens;
@@ -208,7 +209,7 @@ contract FucksToken is ERC20Interface, Owned, SafeMath {
 
 
     // ------------------------------------------------------------------------
-    // Don't accept ETH
+    // No aceptar ETH
     // ------------------------------------------------------------------------
     function () public payable {
         revert();
@@ -216,7 +217,7 @@ contract FucksToken is ERC20Interface, Owned, SafeMath {
 
 
     // ------------------------------------------------------------------------
-    // Owner can transfer out any accidentally sent ERC20 tokens
+    // El propietario puede transferir cualquier ficha ERC20 enviada accidentalmente
     // ------------------------------------------------------------------------
     function transferAnyERC20Token(address tokenAddress, uint tokens) public onlyOwner returns (bool success) {
         return ERC20Interface(tokenAddress).transfer(owner, tokens);
