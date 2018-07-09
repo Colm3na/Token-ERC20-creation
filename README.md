@@ -12,7 +12,7 @@ Esta guía esta basada en [este](https://github.com/bitfwdcommunity/Issue-your-o
 
 ## Desplegando nuestro token ERC20 en la testnet de Ethereum:
 
-###_¿Qué necesitamos?_
+*_¿Qué necesitamos?_*
 
 -1. Una wallet de Ethereum (en la testnet de Ropsten por ejemplo).
 -2. Algunos Ethers (como antes, de la testnet).
