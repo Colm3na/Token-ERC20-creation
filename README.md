@@ -92,4 +92,4 @@ Esta guía esta basada en [este](https://github.com/bitfwdcommunity/Issue-your-o
 
 *Si hemos seguido estos pasos ya tenemos nuestro token ERC20 creado, solo tenemos que ir a cualquier explorador de bloques y buscar la wallet que ha creado el smartContract para ver la información sobre el mismo.*
 
-    ![colmenaToken](images/colmenaToken.png)
+   ![colmenaToken](images/colmenaToken.png)
