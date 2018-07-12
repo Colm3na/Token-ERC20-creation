@@ -74,7 +74,7 @@ contract Owned {
 
     event OwnershipTransferred(address indexed _from, address indexed _to);
 
-    function OwnedConstructor() public {
+    function Owned() public {
     //constructor Owned() public {
         owner = msg.sender;
     }
@@ -89,7 +89,7 @@ contract Owned {
     }
     function acceptOwnership() public {
         require(msg.sender == newOwner);
-        emit OwnershipTransferred(owner, newOwner);
+        OwnershipTransferred(owner, newOwner);
         owner = newOwner;
         newOwner = address(0);
     }
@@ -113,13 +113,13 @@ contract colmenaToken is ERC20Interface, Owned, SafeMath {
     // ------------------------------------------------------------------------
     // Constructor:
     // ------------------------------------------------------------------------
-    function colmenaTokenConstructor() public {
+    function colmenaToken() public {
         symbol = "CoT0";
         name = "Colmena Token";
         decimals = 18;
         _totalSupply = 100000000000000000000;
         balances[0x10e9086f534F4B15b97EaB1fCc82e390A266643c] = _totalSupply;
-        emit Transfer(address(0), 0x10e9086f534F4B15b97EaB1fCc82e390A266643c, _totalSupply);
+        Transfer(address(0), 0x10e9086f534F4B15b97EaB1fCc82e390A266643c, _totalSupply);
     }
 
 
@@ -148,7 +148,7 @@ contract colmenaToken is ERC20Interface, Owned, SafeMath {
     function transfer(address to, uint tokens) public returns (bool success) {
         balances[msg.sender] = safeSub(balances[msg.sender], tokens);
         balances[to] = safeAdd(balances[to], tokens);
-        emit Transfer(msg.sender, to, tokens);
+        Transfer(msg.sender, to, tokens);
         return true;
     }
 
@@ -163,7 +163,7 @@ contract colmenaToken is ERC20Interface, Owned, SafeMath {
     // ------------------------------------------------------------------------
     function approve(address spender, uint tokens) public returns (bool success) {
         allowed[msg.sender][spender] = tokens;
-        emit Approval(msg.sender, spender, tokens);
+        Approval(msg.sender, spender, tokens);
         return true;
     }
 
@@ -181,7 +181,7 @@ contract colmenaToken is ERC20Interface, Owned, SafeMath {
         balances[from] = safeSub(balances[from], tokens);
         allowed[from][msg.sender] = safeSub(allowed[from][msg.sender], tokens);
         balances[to] = safeAdd(balances[to], tokens);
-        emit Transfer(from, to, tokens);
+        Transfer(from, to, tokens);
         return true;
     }
 
@@ -202,7 +202,7 @@ contract colmenaToken is ERC20Interface, Owned, SafeMath {
     // ------------------------------------------------------------------------
     function approveAndCall(address spender, uint tokens, bytes data) public returns (bool success) {
         allowed[msg.sender][spender] = tokens;
-        emit Approval(msg.sender, spender, tokens);
+        Approval(msg.sender, spender, tokens);
         ApproveAndCallFallBack(spender).receiveApproval(msg.sender, tokens, this, data);
         return true;
     }
