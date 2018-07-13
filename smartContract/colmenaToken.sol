@@ -127,7 +127,7 @@ contract colmenaToken is ERC20Interface, Owned, SafeMath {
     // Suministro total:
     // ------------------------------------------------------------------------
     function totalSupply() public view returns (uint) {
-        return _totalSupply  - balances[address(0)];
+        return _totalSupply - balances[address(0)];
     }
 
 
