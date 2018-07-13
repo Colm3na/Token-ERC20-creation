@@ -45,7 +45,7 @@ Esta guía esta basada en [este](https://github.com/bitfwdcommunity/Issue-your-o
 
 - En la línea `8` cambiamos el nombre del token.
 
-- Nos dirigimos a la línea `103` y cambiamos `_"FucksToken"_` por el nombre que le hayamos puesto a nuestro token.
+- Nos dirigimos a la línea `103` y cambiamos `_"colmenaToken"_` por el nombre que le hayamos puesto a nuestro token.
 
 - Hacemos lo mismo para la línea 116.
 
