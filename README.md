@@ -35,7 +35,7 @@ Esta guía esta basada en [este](https://github.com/bitfwdcommunity/Issue-your-o
 
 
 ## Empecemos:
-- Abrimos el contrato en nuestro editor de textos, desde la línea `3` hasta la `15`, en la sección comentada, tenemos toda la información necesaria para nuestro token, como puede ser, el nombre, el símbolo, la cantidad total y los decimales.
+- Abrimos el contrato en nuestro editor de textos, desde la línea `3` hasta la `15`, en la sección comentada, tenemos toda la información necesaria para nuestro token, como puede ser, el nombre, el símbolo, la cantidad total y los decimales (**la línea exacta puede variar, dependiendo del editor de textos que usemos).
 
 - Nos dirigimos a la línea `4` y cambiamos el nombre al que nosotros queramos.
 
